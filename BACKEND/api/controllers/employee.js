@@ -103,6 +103,8 @@ employeeController.loginEmployee = (req, res) => {
   var params = req.body;
   var email = params.email;
   var password = params.password;
+  var role = params.role;
+  var stat = params.status;
 
   Employee.findOne({email: email.toLowerCase()}, (err, employee) => {
     if (err) {
@@ -394,16 +396,16 @@ employeeController.createAdmin = (req, res) => {
   var employee = new Employee();
   var params = req.body;
 
-  employee.name = "Admin2";
-  employee.surname = "Admin2";
-  employee.email = "admin2@admin.com"
-  employee.username = "Admin2";
+  employee.name = "Admin";
+  employee.surname = "Admin";
+  employee.email = "admin@admin.com"
+  employee.username = "Admin";
   employee.role = 'ROLE_ADMIN';
   employee.image = 'null';
   employee.status = 'ACTIVE_ADMIN';
 
   if (!params.password) {
-    bcrypt.hash("password1", null, null, function(err, hash){
+    bcrypt.hash("12345", null, null, function(err, hash){
       employee.password = hash;
       employee.save((err, adminStored) => {
         if (err) {

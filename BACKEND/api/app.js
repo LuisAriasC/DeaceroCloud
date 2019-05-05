@@ -47,4 +47,8 @@ app.use('/api', book_routes);
 app.use('/api', rent_routes);
 */
 
+app.get('/', function(req,res){
+	    res.send('Hello world');
+});
+
 module.exports = app;

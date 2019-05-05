@@ -10,6 +10,9 @@ var md_auth = require('../middlewares/authenticated');
 var multipart = require('connect-multiparty');
 var md_upload = multipart({uploadDir: './uploads/employees'});
 
+api.get('/', function(req,res){
+	res.send('Hello from api');
+});
 api.post('/employee', md_auth.ensureAuth,employeeController.createEmployee);
 api.post('/employee-login', employeeController.loginEmployee);
 //api.get('/employee/:id', md_auth.ensureAuth, employeeController.readEmployee);
