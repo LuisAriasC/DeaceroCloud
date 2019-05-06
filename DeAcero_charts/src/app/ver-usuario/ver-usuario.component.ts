@@ -53,10 +53,12 @@ export class VerUsuarioComponent implements OnInit {
           alert("Usuario Editado");
           this.getEmployees();
           this.resetForm(form);
+          this.editUser = false;
           }, err => {
             alert("El empleado no se puede editar correctamente");
             this.getEmployees();
             this.resetForm(form);
+            this.editUser = false;
         });
       }
       else{

@@ -37,6 +37,7 @@ export class CrearUsuarioComponent implements OnInit {
         form.value.status = "ACTIVE_EMPLOYEE";
       }
       this.employeeService.postEmployee(form.value).subscribe(res => {
+        this.resetForm(form);
         alert("Empleado Agregado");
       }, err => {
         this.resetForm(form);

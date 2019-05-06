@@ -13,7 +13,7 @@ export class EmployeeService {
   employees: Employee[];
   public identity;
   public token;
-  readonly URL_API = 'http://localhost:3977/api/';
+  readonly URL_API = 'http://35.239.171.5:8080/api/';
 
   constructor(private http: HttpClient) {
     this.selectedEmployee = new Employee();
